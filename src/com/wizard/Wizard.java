@@ -1,14 +1,8 @@
+package com.wizard;
 
 public class Wizard {
     String name;
     String surname;
-
-
-    public Wizard(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
-
-    }
 
     public String getName() {
         return name;
