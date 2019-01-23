@@ -32,6 +32,13 @@ public class WizardWars {
 
         Spells spells = new Spells();
         System.out.println(spells.getSpell("Avada Kedavra"));
+        Wizard wizard = new Wizard();
+
+
+            wizard.insertSpell("Avada Kedavra");
+
 
     }
 }
+
+

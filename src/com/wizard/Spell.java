@@ -68,24 +68,6 @@ public class Spell {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Spell spell = (Spell) o;
-        return Double.compare(spell.spellPrice, spellPrice) == 0 &&
-                spellPowerMin == spell.spellPowerMin &&
-                spellPowerMax == spell.spellPowerMax &&
-                successRate == spell.successRate &&
-                spellSpeed == spell.spellSpeed &&
-                Objects.equals(spellName, spell.spellName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(spellName, spellPrice, spellPowerMin, spellPowerMax, successRate, spellSpeed);
-    }
-
-    @Override
     public String toString() {
         return "Spell{" +
                 "spellName='" + spellName + '\'' +
