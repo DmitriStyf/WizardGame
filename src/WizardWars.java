@@ -28,4 +28,5 @@ public class WizardWars {
 
         System.out.println("So " + player.getName()+ " "+player.getName()+" are you are ready to play?");
     }
+
 }
