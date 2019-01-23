@@ -84,5 +84,17 @@ public class Spell {
     public int hashCode() {
         return Objects.hash(spellName, spellPrice, spellPowerMin, spellPowerMax, successRate, spellSpeed);
     }
+
+    @Override
+    public String toString() {
+        return "Spell{" +
+                "spellName='" + spellName + '\'' +
+                ", spellPrice=" + spellPrice +
+                ", spellPowerMin=" + spellPowerMin +
+                ", spellPowerMax=" + spellPowerMax +
+                ", successRate=" + successRate +
+                ", spellSpeed=" + spellSpeed +
+                '}';
+    }
 }
 

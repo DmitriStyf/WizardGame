@@ -1,4 +1,6 @@
 import com.wizard.CharacterCreation;
+import com.wizard.Spell;
+import com.wizard.Spells;
 import com.wizard.Wizard;
 
 import java.util.Scanner;
@@ -26,7 +28,10 @@ public class WizardWars {
             }
         }
 
-        System.out.println("So " + player.getName()+ " "+player.getName()+" are you are ready to play?");
-    }
+        System.out.println("So " + player.getName() + " " + player.getSurname() + " are you are ready to play?");
 
+        Spells spells = new Spells();
+        System.out.println(spells.getSpell("Avada Kedavra"));
+
+    }
 }
