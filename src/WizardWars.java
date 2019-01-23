@@ -29,14 +29,14 @@ public class WizardWars {
         }
 
         System.out.println("So " + player.getName() + " " + player.getSurname() + " are you are ready to play?");
-
+/**MOI KOD
         Spells spells = new Spells();
         System.out.println(spells.getSpell("Avada Kedavra"));
         Wizard wizard = new Wizard();
 
 
             wizard.insertSpell("Avada Kedavra");
-
+*/
 
     }
 }

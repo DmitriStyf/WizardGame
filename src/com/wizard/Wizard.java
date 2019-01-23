@@ -52,6 +52,6 @@ public class Wizard {
     }
 
     public void insertSpell(String incomingSpell) {
-        knowledgeList.add(incomingSpell);
+        knowledgeList.add(incomingSpell);// mozhno bqlo prosot sdelatj get.spell i add
     }
 }
