@@ -2,14 +2,23 @@ package com.wizard;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Wizard {
     private String name;
     private String surname;
-    private int health;
-    private int money;
-    private ArrayList<String> knowledgeList = new ArrayList<>();
+    private int health = 100;
+    private int money = 100;
+    private List<String> knowledgeList = new ArrayList<>();
 
+    public List<String> getKnowledgeList() {
+        return knowledgeList;
+    }
+
+    public void setKnowledgeList(List<String> knowledgeList) {
+        this.knowledgeList = knowledgeList;
+    }
 
     public String getName() {
         return name;
@@ -27,13 +36,6 @@ public class Wizard {
         this.surname = surname;
     }
 
-    public ArrayList<String> getKnowledgeList() {
-        return knowledgeList;
-    }
-
-    public void setKnowledgeList(ArrayList<String> knowledgeList) {
-        this.knowledgeList = knowledgeList;
-    }
 
     public int getHealth() {
         return health;

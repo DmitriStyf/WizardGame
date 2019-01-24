@@ -5,6 +5,9 @@ import java.util.*;
 public class Spells {
     private Map<String, Spell> spellList = new HashMap<>();
 
+    public Map<String, Spell> getSpellList() {
+        return spellList;
+    }
 
     public Spells() {
 
@@ -15,11 +18,6 @@ public class Spells {
         spellList.put("Avada Kedavra", new Spell("Avada Kedavra", 100, 100, 100, 10, 5));
         spellList.put("Vulnera Sanentur", new Spell("Vulnera Sanentur", 25, 10, 20, 70, 1));
 
-    }
-    public void printAllSpells() {
-        for (int counter = 0; counter < spellList.size(); counter++) {
-            System.out.println(spellList.get().getSpellName() + spellList.get().getSpellPrice())));
-        }
     }
 
     public Spell getSpell(String spell) {

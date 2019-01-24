@@ -1,16 +1,14 @@
 package com.wizard;
 
-import java.util.Objects;
-
 public class Spell {
     private String spellName;
-    private double spellPrice;
+    private int spellPrice;
     private int spellPowerMin;
     private int spellPowerMax;
     private int successRate;
     private int spellSpeed;
 
-    public Spell(String spellName, double spellPrice, int spellDamageMin, int spellDamageMax, int successRate, int spellSpeed) {
+    public Spell(String spellName, int spellPrice, int spellDamageMin, int spellDamageMax, int successRate, int spellSpeed) {
         this.spellName = spellName;
         this.spellPrice = spellPrice;
         this.spellPowerMin = spellDamageMin;
@@ -27,11 +25,11 @@ public class Spell {
         this.spellName = spellName;
     }
 
-    public double getSpellPrice() {
+    public int getSpellPrice() {
         return spellPrice;
     }
 
-    public void setSpellPrice(double spellPrice) {
+    public void setSpellPrice(int spellPrice) {
         this.spellPrice = spellPrice;
     }
 
