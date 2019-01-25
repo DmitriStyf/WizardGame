@@ -38,8 +38,13 @@ public class WizardWars {
         wizardShop.buySpells(buyspell, player1);
         System.out.println(player1.getKnowledgeList());
         System.out.println(player1.getMoney());
-        spellUtilities.randomNumberInRange(spells.getSpellList().get("Lacarnum Inflamarae").getSpellPowerMin(),
-                spells.getSpellList().get("Lacarnum Inflamarae").getSpellPowerMax());
+        Opponent opponent = new Opponent();
+        int test = wizard.getHealth()-spellUtilities.channelHealing("Lacarnum Inflamarae");
+        System.out.println("Total health " +test);
+
+        opponent.decideSpellName(player1,opponent);
+
+
 
 
     }
@@ -48,11 +53,44 @@ public class WizardWars {
 }
 
 /**
- * MOI KOD
- * Spells spells = new Spells();
- * System.out.println(spells.getSpell("Avada Kedavra"));
- * Wizard wizard = new Wizard();
- * <p>
- * <p>
- * wizard.insertSpell("Avada Kedavra");
+ * create class Opponent (Check internet what is inheritance in java)
+ *
+ * decideSpellName 2 Wizard object one is the opponent and other is the player object
+ * it will return spellName (String)
+ */
+
+        /**
+*         * Task1: If health of opponent below 45
+ *         * 50% change to cast healing
+ *         * 50% there will be below decision
+ *         * he will get players health
+ *         * if playerHealth is below 11 he will castFlame
+ *         * else if playerHealth is below 17 he will castLightening
+ *         * else if playerHealth is below 23 he will castWind
+ *         * else if playerHealth is below 30 he will castFireball
+ *         * else if playerHealth is below 65 he will castDeath
+ *         * else castHealing
+ *
+ *        Lacarnum Inflamarae   Flame
+         *        //Lumos Solem           Lightening
+         *        //Everte Statum         Wind
+         *        //Arania Exumai         Fireball
+         *        //Avada Kedavra         Death
+         *        //Vulnera Sanentur      Healing
+         *          /**
+  *                     *  Task2: If health of opponent bigger than the player
+  *                     *          25% change to castLightening
+  *                     *          25% to castFireball
+  *                     *          25% to castWind
+  *                     *          25% to castFlmae
+  *                     *
+  *                     */
+/**
+  *             *  Task3: rest of the conditions
+  *             *          20% change to castLightening
+  *             *          15% to castFireball
+  *             *          20% to castWind
+  *             *          25% to castFlame
+  *             *          20% to cast healing
+  *
  */
