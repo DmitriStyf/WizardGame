@@ -1,6 +1,7 @@
 import com.wizard.*;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class WizardWars {
 
@@ -43,7 +44,7 @@ public class WizardWars {
         System.out.println("Total health " +test);
 
         opponent.decideSpellName(player1,opponent);
-
+        System.out.println(opponent.decideSpellName(player1,opponent));
 
 
 

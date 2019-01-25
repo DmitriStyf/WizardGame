@@ -29,27 +29,26 @@ public class Opponent extends Wizard {
         } else if (opponent.getHealth() > player1.getHealth()) {
             if (25 > decideHealorDmg) {
                 return "Lumos Solem";
-            } else if (25 > decideHealorDmg) {
+            } else if (50 > decideHealorDmg) {
                 return "Arania Exumai";
-            } else if (25 > decideHealorDmg) {
+            } else if (75 > decideHealorDmg) {
                 return "Everte Statum";
-            } else if (25 > decideHealorDmg) {
+            } else {
                 return "Lumos Solem";
             }
 
         } else {
             if (20 > decideHealorDmg) {
                 return "Lumos Solem";
-            } else if (15 > decideHealorDmg) {
+            } else if (35 > decideHealorDmg) {
                 return "Arania Exumai";
-            } else if (20 > decideHealorDmg) {
+            } else if (55 > decideHealorDmg) {
                 return "Everte Statum";
-            } else if (25 > decideHealorDmg) {
+            } else if (80 > decideHealorDmg) {
                 return "Lacarnum Inflamarae";
-            } else if (20 > decideHealorDmg) {
+            } else {
                 return "Vulnera Sanentur";
             }
         }
-        return null;
     }
 }
