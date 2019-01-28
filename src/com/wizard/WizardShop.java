@@ -28,7 +28,7 @@ public class WizardShop {
                     System.out.println("You don't have enough money ");
                 }
             }
-        } else {
+        } else{
             System.out.println("This Spell doesn't exists in the shop");
         }
     }

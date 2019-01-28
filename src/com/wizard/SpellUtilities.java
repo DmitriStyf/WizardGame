@@ -40,11 +40,11 @@ public class SpellUtilities {
                 updatedSuccessRate = updatedSuccessRate - channeldeduct;
                 System.out.println("Channeled " + healingAmount + " healing");
             }
+            System.out.println("Total healing done " + healingDone);
             return healingDone;
         } else {
             System.out.println(nameOfSpell + " cast failed !");
         }
-        System.out.println("Total healing done " + healingDone);
         return 0;
     }
 }
