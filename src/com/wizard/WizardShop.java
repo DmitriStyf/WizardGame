@@ -20,7 +20,7 @@ public class WizardShop {
             if (wizard.getKnowledgeList().contains(requestedSpell)) {
                 System.out.println("This spell already exists in your spell book choose different spell");
             } else {
-                if (spells.getSpellList().get(requestedSpell).getSpellPrice() < wizard.getMoney()) {
+                if (spells.getSpellList().get(requestedSpell).getSpellPrice() <= wizard.getMoney()) {
                     wizard.getKnowledgeList().add(requestedSpell);
                     int updatedMoney = wizard.getMoney() - spells.getSpellList().get(requestedSpell).getSpellPrice();
                     wizard.setMoney(updatedMoney);

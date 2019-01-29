@@ -34,21 +34,23 @@ public class WizardWars {
             }
         }
         System.out.println("So " + player1.getName() + " " + player1.getSurname() + " are you are ready to play?");
-
+        wizardShop.printAllSpells();
         while (true) {
             System.out.println("What spell do you want to buy, type Done when finished buying");
-            wizardShop.printAllSpells();
             String buyspell = scanner.nextLine();
             if (wizard.getMoney() <= 0 || buyspell.equalsIgnoreCase("done")) {
                 break;
             } else {
                 wizardShop.buySpells(buyspell, player1);
                 System.out.println("You have " + player1.getMoney() + " gold left ");
-                continue;
+                if (wizard.getMoney() <= 0) {
+                    break;
+                }
+
             }
         }
 
-        System.out.println("Thank you for shopping, you have bough: ");
+        System.out.println("Thank you for shopping, you have bought: ");
         System.out.println(player1.getKnowledgeList());
 
         System.out.println("LETS DUEL");
@@ -67,35 +69,51 @@ public class WizardWars {
                     if (pCastingSpell.equalsIgnoreCase("Vulnera Sanentur")) {
                         int healing = spellUtilities.channelHealing(pCastingSpell);
                         player1.setHealth(player1.getHealth() + healing);
-                        System.out.println(player1.getName() + "healed " + healing);
-                        System.out.println(player1.getName() + " have " + player1.getHealth() + " left");
-                        System.out.println(snake.getName() + " have " + snake.getHealth() + " left");
+                        System.out.println(player1.getName() + " healed " + healing + " hp");
                     } else {
-
                         int damage = spellUtilities.castDamage(pCastingSpell);
                         snake.setHealth(snake.getHealth() - damage);
                         System.out.println(player1.getName() + " did " + damage + " damage");
-                        System.out.println(player1.getName() + " have " + player1.getHealth() + " left");
-                        System.out.println(snake.getName() + " have " + snake.getHealth() + " left");
-
                     }
+                    if (player1.getHealth() < 1 || snake.getHealth() < 1) {
+                        break;
+                    }
+                    if (snakeCastSpell.equalsIgnoreCase("Vulnera Sanentur")) {
+                        int healing = spellUtilities.channelHealing(snakeCastSpell);
+                        snake.setHealth(snake.getHealth() + healing);
+                        System.out.println(snake.getName() + " healed " + healing + " hp");
+                    } else {
+                        int damage = spellUtilities.castDamage(snakeCastSpell);
+                        player1.setHealth(player1.getHealth() - damage);
+                        System.out.println(snake.getName() + " did " + damage + " damage");
+                    }
+                    System.out.println(player1.getName() + " have " + player1.getHealth() + " health left");
+                    System.out.println(snake.getName() + " have " + snake.getHealth() + " health left");
                 } else if (daySpeedSpell < snakeSpeedSpell) {
                     System.out.println(snake.getName() + " spell is faster. Casting: " + snakeCastSpell);
                     if (snakeCastSpell.equalsIgnoreCase("Vulnera Sanentur")) {
                         int healing = spellUtilities.channelHealing(snakeCastSpell);
                         snake.setHealth(snake.getHealth() + healing);
-                        System.out.println(snake.getName() + "healed " + healing);
-                        System.out.println(player1.getName() + " have " + player1.getHealth() + " left");
-                        System.out.println(snake.getName() + " have " + snake.getHealth() + " left");
-
+                        System.out.println(snake.getName() + " healed " + healing + " hp");
                     } else {
-
                         int damage = spellUtilities.castDamage(snakeCastSpell);
                         player1.setHealth(player1.getHealth() - damage);
-                        System.out.println(snake.getName() + " did " + damage);
-                        System.out.println(player1.getName() + " have " + player1.getHealth() + " left");
-                        System.out.println(snake.getName() + " have " + snake.getHealth() + " left");
+                        System.out.println(snake.getName() + " did " + damage + " damage");
                     }
+                    if (player1.getHealth() < 1 || snake.getHealth() < 1) {
+                        break;
+                    }
+                    if (pCastingSpell.equalsIgnoreCase("Vulnera Sanentur")) {
+                        int healing = spellUtilities.channelHealing(pCastingSpell);
+                        player1.setHealth(player1.getHealth() + healing);
+                        System.out.println(player1.getName() + " healed " + healing + " hp");
+                    } else {
+                        int damage = spellUtilities.castDamage(pCastingSpell);
+                        snake.setHealth(snake.getHealth() - damage);
+                        System.out.println(player1.getName() + " did " + damage + " damage");
+                    }
+                    System.out.println(player1.getName() + " have " + player1.getHealth() + " health left");
+                    System.out.println(snake.getName() + " have " + snake.getHealth() + " health left");
                 } else {
                     int decideHealorDmg = spellUtilities.randomNumberInRange(0, 50);
                     if (daySpeedSpell >= decideHealorDmg) {
@@ -103,45 +121,60 @@ public class WizardWars {
                         if (pCastingSpell.equalsIgnoreCase("Vulnera Sanentur")) {
                             int healing = spellUtilities.channelHealing(pCastingSpell);
                             player1.setHealth(player1.getHealth() + healing);
-                            System.out.println(player1.getName() + "healed " + healing);
-                            System.out.println(player1.getName() + " have " + player1.getHealth() + " left");
-                            System.out.println(snake.getName() + " have " + snake.getHealth() + " left");
-
-
+                            System.out.println(player1.getName() + " healed " + healing + " hp");
                         } else {
-
                             int damage = spellUtilities.castDamage(pCastingSpell);
                             snake.setHealth(snake.getHealth() - damage);
                             System.out.println(player1.getName() + " did " + damage + " damage");
-                            System.out.println(player1.getName() + " have " + player1.getHealth() + " left");
-                            System.out.println(snake.getName() + " have " + snake.getHealth() + " left");
-
-
+                        }
+                        if (player1.getHealth() < 1 || snake.getHealth() < 1) {
+                            break;
+                        }
+                        if (snakeCastSpell.equalsIgnoreCase("Vulnera Sanentur")) {
+                            int healing = spellUtilities.channelHealing(snakeCastSpell);
+                            snake.setHealth(snake.getHealth() + healing);
+                            System.out.println(snake.getName() + " healed " + healing + " hp");
+                        } else {
+                            int damage = spellUtilities.castDamage(snakeCastSpell);
+                            player1.setHealth(player1.getHealth() - damage);
+                            System.out.println(snake.getName() + " did " + damage + " damage");
+                        }
+                        if (player1.getHealth() < 1 || snake.getHealth() < 1) {
+                            break;
                         }
                     } else {
                         System.out.println(snake.getName() + " Spell is faster. Casting: " + snakeCastSpell);
                         if (snakeCastSpell.equalsIgnoreCase("Vulnera Sanentur")) {
                             int healing = spellUtilities.channelHealing(snakeCastSpell);
                             snake.setHealth(snake.getHealth() + healing);
-                            System.out.println(snake.getName() + "healed " + healing);
-                            System.out.println(player1.getName() + " have " + player1.getHealth() + " left");
-                            System.out.println(snake.getName() + " have " + snake.getHealth() + " left");
-
-
+                            System.out.println(snake.getName() + " healed " + healing + " hp");
                         } else {
-
                             int damage = spellUtilities.castDamage(snakeCastSpell);
                             player1.setHealth(player1.getHealth() - damage);
-                            System.out.println(player1.getName() + " did " + damage + " damage");
-                            System.out.println(player1.getName() + " have " + player1.getHealth() + " left");
-                            System.out.println(snake.getName() + " have " + snake.getHealth() + " left");
-
+                            System.out.println(snake.getName() + " did " + damage + " damage");
                         }
+                        if (player1.getHealth() < 1 || snake.getHealth() < 1) {
+                            break;
+                        }
+                        if (pCastingSpell.equalsIgnoreCase("Vulnera Sanentur") ) {
+                            int healing = spellUtilities.channelHealing(pCastingSpell);
+                            player1.setHealth(player1.getHealth() + healing);
+                            System.out.println(player1.getName() + " healed " + healing + " hp");
+                        } else {
+                            int damage = spellUtilities.castDamage(pCastingSpell);
+                            snake.setHealth(snake.getHealth() - damage);
+                            System.out.println(player1.getName() + " did " + damage + " damage");
+                        }
+
                     }
+                    System.out.println(player1.getName() + " have " + player1.getHealth() + " left");
+                    System.out.println(snake.getName() + " have " + snake.getHealth() + " left");
                 }
             } else {
                 System.out.println("You don't know this spell");
-
+            }
+            if (player1.getHealth() < 1 || snake.getHealth() < 1) {
+                break;
             }
         }
         if (snake.getHealth() > player1.getHealth()) {
