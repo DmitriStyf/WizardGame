@@ -60,11 +60,20 @@ public class WizardWars {
 
         while (player1.getHealth() > 0 || snake.getHealth() > 0) {
             String pCastingSpell = scanner.nextLine();
+            if (pCastingSpell.equalsIgnoreCase("print")) {
+                System.out.println(player1.getKnowledgeList());
+                continue;
+            }
+            else if(!player1.getKnowledgeList().contains(pCastingSpell)){
+                System.out.println("You don't know this spell");
+                continue;
+            }
             String snakeCastSpell = snake.decideSpellName(player1, snake);
+
             int daySpeedSpell = spells.getSpellList().get(pCastingSpell).getSpellSpeed();
             int snakeSpeedSpell = spells.getSpellList().get(snakeCastSpell).getSpellSpeed();
             if (player1.getKnowledgeList().contains(pCastingSpell)) {
-                if (daySpeedSpell > snakeSpeedSpell) {
+                if (daySpeedSpell < snakeSpeedSpell) {
                     System.out.println(player1.getName() + " Spell is faster. Casting: " + pCastingSpell);
                     if (pCastingSpell.equalsIgnoreCase("Vulnera Sanentur")) {
                         int healing = spellUtilities.channelHealing(pCastingSpell);
@@ -91,7 +100,7 @@ public class WizardWars {
                     }
                     System.out.println(player1.getName() + " have " + player1.getHealth() + " health left");
                     System.out.println(snake.getName() + " have " + snake.getHealth() + " health left");
-                } else if (daySpeedSpell < snakeSpeedSpell) {
+                } else if (daySpeedSpell >  snakeSpeedSpell) {
                     System.out.println(snake.getName() + " spell is faster. Casting: " + snakeCastSpell);
                     if (snakeCastSpell.equalsIgnoreCase("Vulnera Sanentur")) {
                         int healing = spellUtilities.channelHealing(snakeCastSpell);
@@ -119,8 +128,8 @@ public class WizardWars {
                     System.out.println(player1.getName() + " have " + player1.getHealth() + " health left");
                     System.out.println(snake.getName() + " have " + snake.getHealth() + " health left");
                 } else {
-                    int decideHealorDmg = spellUtilities.randomNumberInRange(0, 50);
-                    if (daySpeedSpell >= decideHealorDmg) {
+                    int decideHealorDmg = spellUtilities.randomNumberInRange(1,2);
+                    if (decideHealorDmg == 1) {
                         System.out.println(player1.getName() + " Spell is faster. Casting: " + pCastingSpell);
                         if (pCastingSpell.equalsIgnoreCase("Vulnera Sanentur")) {
                             int healing = spellUtilities.channelHealing(pCastingSpell);
@@ -178,10 +187,6 @@ public class WizardWars {
                     System.out.println(player1.getName() + " have " + player1.getHealth() + " left");
                     System.out.println(snake.getName() + " have " + snake.getHealth() + " left");
                 }
-            } else if (pCastingSpell.equalsIgnoreCase("print")) {
-                System.out.println(player1.getKnowledgeList());
-            }else{
-                System.out.println("You don't know this spell");
             }
             if (player1.getHealth() < 1 || snake.getHealth() < 1) {
                 break;

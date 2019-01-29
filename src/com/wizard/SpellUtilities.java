@@ -47,4 +47,5 @@ public class SpellUtilities {
         }
         return 0;
     }
+
 }
