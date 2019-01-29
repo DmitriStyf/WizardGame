@@ -56,4 +56,13 @@ public class Wizard {
     public void insertSpell(String incomingSpell) {
         knowledgeList.add(incomingSpell);// mozhno bqlo prosot sdelatj get.spell i add
     }
+
+    public void healthRounder() {
+        if (health > 100) {
+            this.health = 100;
+        }
+        if (health < 0) {
+            this.health = 0;
+        }
+    }
 }

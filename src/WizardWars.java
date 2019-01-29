@@ -69,6 +69,7 @@ public class WizardWars {
                     if (pCastingSpell.equalsIgnoreCase("Vulnera Sanentur")) {
                         int healing = spellUtilities.channelHealing(pCastingSpell);
                         player1.setHealth(player1.getHealth() + healing);
+                        player1.healthRounder();
                         System.out.println(player1.getName() + " healed " + healing + " hp");
                     } else {
                         int damage = spellUtilities.castDamage(pCastingSpell);
@@ -81,6 +82,7 @@ public class WizardWars {
                     if (snakeCastSpell.equalsIgnoreCase("Vulnera Sanentur")) {
                         int healing = spellUtilities.channelHealing(snakeCastSpell);
                         snake.setHealth(snake.getHealth() + healing);
+                        snake.healthRounder();
                         System.out.println(snake.getName() + " healed " + healing + " hp");
                     } else {
                         int damage = spellUtilities.castDamage(snakeCastSpell);
@@ -94,6 +96,7 @@ public class WizardWars {
                     if (snakeCastSpell.equalsIgnoreCase("Vulnera Sanentur")) {
                         int healing = spellUtilities.channelHealing(snakeCastSpell);
                         snake.setHealth(snake.getHealth() + healing);
+                        snake.healthRounder();
                         System.out.println(snake.getName() + " healed " + healing + " hp");
                     } else {
                         int damage = spellUtilities.castDamage(snakeCastSpell);
@@ -106,6 +109,7 @@ public class WizardWars {
                     if (pCastingSpell.equalsIgnoreCase("Vulnera Sanentur")) {
                         int healing = spellUtilities.channelHealing(pCastingSpell);
                         player1.setHealth(player1.getHealth() + healing);
+                        player1.healthRounder();
                         System.out.println(player1.getName() + " healed " + healing + " hp");
                     } else {
                         int damage = spellUtilities.castDamage(pCastingSpell);
@@ -121,6 +125,7 @@ public class WizardWars {
                         if (pCastingSpell.equalsIgnoreCase("Vulnera Sanentur")) {
                             int healing = spellUtilities.channelHealing(pCastingSpell);
                             player1.setHealth(player1.getHealth() + healing);
+                            player1.healthRounder();
                             System.out.println(player1.getName() + " healed " + healing + " hp");
                         } else {
                             int damage = spellUtilities.castDamage(pCastingSpell);
@@ -133,6 +138,7 @@ public class WizardWars {
                         if (snakeCastSpell.equalsIgnoreCase("Vulnera Sanentur")) {
                             int healing = spellUtilities.channelHealing(snakeCastSpell);
                             snake.setHealth(snake.getHealth() + healing);
+                            snake.healthRounder();
                             System.out.println(snake.getName() + " healed " + healing + " hp");
                         } else {
                             int damage = spellUtilities.castDamage(snakeCastSpell);
@@ -147,6 +153,7 @@ public class WizardWars {
                         if (snakeCastSpell.equalsIgnoreCase("Vulnera Sanentur")) {
                             int healing = spellUtilities.channelHealing(snakeCastSpell);
                             snake.setHealth(snake.getHealth() + healing);
+                            snake.healthRounder();
                             System.out.println(snake.getName() + " healed " + healing + " hp");
                         } else {
                             int damage = spellUtilities.castDamage(snakeCastSpell);
@@ -159,6 +166,7 @@ public class WizardWars {
                         if (pCastingSpell.equalsIgnoreCase("Vulnera Sanentur") ) {
                             int healing = spellUtilities.channelHealing(pCastingSpell);
                             player1.setHealth(player1.getHealth() + healing);
+                            player1.healthRounder();
                             System.out.println(player1.getName() + " healed " + healing + " hp");
                         } else {
                             int damage = spellUtilities.castDamage(pCastingSpell);
@@ -170,7 +178,9 @@ public class WizardWars {
                     System.out.println(player1.getName() + " have " + player1.getHealth() + " left");
                     System.out.println(snake.getName() + " have " + snake.getHealth() + " left");
                 }
-            } else {
+            } else if (pCastingSpell.equalsIgnoreCase("print")) {
+                System.out.println(player1.getKnowledgeList());
+            }else{
                 System.out.println("You don't know this spell");
             }
             if (player1.getHealth() < 1 || snake.getHealth() < 1) {
